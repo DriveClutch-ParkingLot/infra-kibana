@@ -14,4 +14,4 @@ while true; do
 done
 
 echo "Starting Kibana"
-exec kibana
+/docker-entrypoint.sh
