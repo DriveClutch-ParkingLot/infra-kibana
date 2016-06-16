@@ -7,5 +7,6 @@ COPY kibana.yml /opt/kibana/config/
 COPY entrypoint.sh /entrypoint.sh
 
 RUN kibana plugin --install elastic/sense
+RUN kibana plugin --install elastic/timelion
 
 CMD ["/entrypoint.sh"]
