@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # Pull out the elasticsearch hostname from the environment variable
-STP=${ELASTICSEARCH_URL#http://}
-ELK_ES_HOST=${STP%:9200/}
+STPA=${ELASTICSEARCH_URL#http://}
+STPB=${STPA%:9200}
+ELK_ES_HOST=${STPB%/}
 
 # Wait for the Elasticsearch container to be ready before starting Kibana.
 echo "Stalling for Elasticsearch"
