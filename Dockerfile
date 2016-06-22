@@ -3,9 +3,5 @@ MAINTAINER david@driveclutch.com
 
 RUN apt-get update && apt-get install -y netcat
 
-#COPY entrypoint.sh /entrypoint.sh
-
-RUN kibana plugin --install elastic/sense
-RUN kibana plugin --install elastic/timelion
-
-#CMD ["/entrypoint.sh"]
+RUN gosu kibana kibana plugin --install elastic/sense
+RUN gosu kibana kibana plugin --install elastic/timelion
